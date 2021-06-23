@@ -2,6 +2,7 @@ package abstract_factory
 
 import "testing"
 
+// 抽象工厂
 func TestMotorbikeFactory(t *testing.T) {
 	motorbikeF, err := BuildFactory(MotorbikeFactoryType)
 	if err != nil {

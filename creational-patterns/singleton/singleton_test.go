@@ -2,6 +2,7 @@ package singleton
 
 import "testing"
 
+// 单例
 func TestGetInstance(t *testing.T) {
 	counter1 := GetInstance()
 

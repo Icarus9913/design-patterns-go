@@ -2,6 +2,7 @@ package prototype
 
 import "testing"
 
+// 原型
 func TestClone(t *testing.T) {
 	shirtCache := GetShirtsCloner()
 	if shirtCache == nil {

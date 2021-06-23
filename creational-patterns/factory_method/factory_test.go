@@ -1,10 +1,11 @@
-package factory
+package factory_method
 
 import (
 	"strings"
 	"testing"
 )
 
+// 工厂方法
 func TestCreatePaymentMethodCash(t *testing.T) {
 	payment, err := GetPaymentMehod(Cash)
 	if nil != err {
