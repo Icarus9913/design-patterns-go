@@ -2,6 +2,7 @@ package Builder
 
 import "testing"
 
+// 生成器——对象创建型模式
 func TestBuilderPattern(t *testing.T) {
 	manufacturingComplex := ManufacturingDirector{}
 

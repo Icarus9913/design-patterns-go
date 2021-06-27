@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 工厂方法
+// 工厂方法——对象创建型模式
 func TestCreatePaymentMethodCash(t *testing.T) {
 	payment, err := GetPaymentMehod(Cash)
 	if nil != err {

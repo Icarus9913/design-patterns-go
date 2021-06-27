@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 享元
+// 享元——对象结构型模式
 func TestTeamFlyweightFactory_GetTeam(t *testing.T) {
 	factory := NewTeamFactory()
 	teamA1 := factory.GetTeam(TEAM_A)

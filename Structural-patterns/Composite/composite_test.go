@@ -2,7 +2,7 @@ package Composite
 
 import "testing"
 
-// 组合
+// 组合——对象结构型模式
 func TestAthlete_Train(t *testing.T) {
 	swimmer := CompositeSwimmerA{
 		MySwim: Swim,

@@ -2,7 +2,7 @@ package Singleton
 
 import "testing"
 
-// 单例
+// 单例——对象创建型模式
 func TestGetInstance(t *testing.T) {
 	counter1 := GetInstance()
 

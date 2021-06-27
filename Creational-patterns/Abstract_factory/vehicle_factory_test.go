@@ -2,7 +2,7 @@ package Abstract_factory
 
 import "testing"
 
-// 抽象工厂
+// 抽象工厂——对象创建型模式
 func TestMotorbikeFactory(t *testing.T) {
 	motorbikeF, err := BuildFactory(MotorbikeFactoryType)
 	if err != nil {

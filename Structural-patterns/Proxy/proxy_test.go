@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 代理
+// 代理——对象结构型模式
 func Test_UserListProxy(t *testing.T) {
 	someDatabase := UserList{}
 	rand.Seed(2342342)

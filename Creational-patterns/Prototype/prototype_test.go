@@ -2,7 +2,7 @@ package Prototype
 
 import "testing"
 
-// 原型
+// 原型——对象创建型模式
 func TestClone(t *testing.T) {
 	shirtCache := GetShirtsCloner()
 	if shirtCache == nil {

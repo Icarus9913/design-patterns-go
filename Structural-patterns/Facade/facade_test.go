@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 外观
+// 外观——对象结构型模式
 func TestOpenWeatherMap_responseParser(t *testing.T) {
 	r := getMockData()
 	openWeatherMap := CurrentWeatherData{APIkey: ""}

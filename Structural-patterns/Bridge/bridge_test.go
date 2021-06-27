@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 桥接
+// 桥接——对象结构型模式
 func TestPrintAPI1(t *testing.T) {
 	api1 := PrinterImpl1{}
 	err := api1.PrintMessage("Hello")

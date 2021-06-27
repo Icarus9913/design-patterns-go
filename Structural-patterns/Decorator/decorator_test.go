@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// 装饰
+// 装饰——对象结构型模式
 func TestPizzaDecorator_AddIngredient(t *testing.T) {
 	pizza := &PizzaDecorator{}
 	pizzaResult, _ := pizza.AddIngredient()

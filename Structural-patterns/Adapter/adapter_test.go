@@ -2,7 +2,7 @@ package Adapter
 
 import "testing"
 
-// 适配器
+// 适配器——类对象结构型模式
 func TestAdapter(t *testing.T) {
 	msg := "Hello World!"
 	adapter := PrinterAdapter{
