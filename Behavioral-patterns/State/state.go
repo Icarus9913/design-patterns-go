@@ -57,8 +57,6 @@ type FinishState struct{}
 	return false
 }*/
 
-
-
 type WinState struct{}
 
 func (w *WinState) executeState(c *GameContext) bool {

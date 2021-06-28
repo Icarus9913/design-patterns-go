@@ -46,7 +46,6 @@ func (m *MessageB) Print() {
 	fmt.Fprintf(m.Output, "B: %s", m.Msg)
 }
 
-
 type MessageVisitor struct{}
 
 func (mf *MessageVisitor) VisitA(m *MessageA) {

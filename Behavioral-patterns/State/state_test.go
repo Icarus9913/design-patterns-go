@@ -3,10 +3,11 @@ package State
 import "testing"
 
 // 状态——对象行为型模式
-func TestState(t *testing.T)  {
+func TestState(t *testing.T) {
 	start := StartState{}
 	game := GameContext{
-		Next:&start,
+		Next: &start,
 	}
-	for game.Next.executeState(&game) {}
+	for game.Next.executeState(&game) {
+	}
 }

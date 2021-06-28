@@ -16,4 +16,3 @@ func TestLaunchPipeline(t *testing.T) {
 		t.Logf("%d == %d\n", res, test[1])
 	}
 }
-

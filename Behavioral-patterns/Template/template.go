@@ -49,6 +49,7 @@ func (a *AnonymousTemplate) ExecuteAlgorithm(f func() string) string {
 type TemplateAdapter struct {
 	myFunc func() string
 }
+
 func (a *TemplateAdapter) Message() string {
 	return ""
 }
@@ -59,10 +60,10 @@ func MessageRetrieverAdapter(f func() string) MessageRetriever {
 type adapter struct {
 	myFunc func() string
 }
+
 func (a *adapter) Message() string {
 	if a.myFunc != nil {
 		return a.myFunc()
 	}
 	return ""
 }
-

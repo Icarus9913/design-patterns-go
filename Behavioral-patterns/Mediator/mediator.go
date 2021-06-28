@@ -38,16 +38,16 @@ func (o *One) OnePlus(n interface{}) interface{} {
 	}
 }
 
-func Sum(a, b interface{}) interface{}{
+func Sum(a, b interface{}) interface{} {
 	switch a := a.(type) {
 	case One:
-		switch b:=b.(type) {
+		switch b := b.(type) {
 		case One:
 			return &Two{}
 		case Two:
 			return &Three{}
 		case int:
-			return b+1
+			return b + 1
 		default:
 			return fmt.Errorf("Number not found")
 		}

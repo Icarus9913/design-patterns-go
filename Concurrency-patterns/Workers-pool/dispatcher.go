@@ -12,6 +12,12 @@ type dispatcher struct {
 	inCh chan Request
 }
 
+func NewDispatcher(b int) Dispatcher {
+	return &dispatcher{
+		inCh: make(chan Request, b),
+	}
+}
+
 func (d *dispatcher) LaunchWorker(w WorkerLauncher) {
 	w.LaunchWorker(d.inCh)
 }
@@ -25,11 +31,5 @@ func (d *dispatcher) MakeRequest(r Request) {
 	case d.inCh <- r:
 	case <-time.After(time.Second * 5):
 		return
-	}
-}
-
-func NewDispatcher(b int) Dispatcher {
-	return &dispatcher{
-		inCh: make(chan Request, b),
 	}
 }

@@ -10,7 +10,7 @@ import (
 var timeoutMilliseconds int = 5000
 
 type barrierResp struct {
-	Err error
+	Err  error
 	Resp string
 }
 

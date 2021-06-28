@@ -40,9 +40,10 @@ func TestPublisher(t *testing.T) {
 		},
 	}
 
-	p.AddSubscriberCh() <- sub
-	wg.Add(1)
+	go p.start()
 
+	wg.Add(1)
+	p.AddSubscriberCh() <- sub
 	p.PublishingCh() <- msg
 	wg.Wait()
 
@@ -50,6 +51,7 @@ func TestPublisher(t *testing.T) {
 	if len(pubCon.subscribers) != 1 {
 		t.Error("Unexpected number of subscribers")
 	}
+
 	wg.Add(1)
 	p.RemoveSubscriberCh() <- sub
 	wg.Wait()

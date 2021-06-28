@@ -69,7 +69,7 @@ func (m *myTestWriter) Next(s string) {
 
 type ClosureChain struct {
 	NextChain ChainLogger
-	Closure func(string)
+	Closure   func(string)
 }
 
 func (c *ClosureChain) Next(s string) {

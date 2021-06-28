@@ -23,7 +23,7 @@ func TestPrint(t *testing.T) {
 		//w, err := os.Create("/tmp/image.jpg")
 		w, err := os.Create("E:\\image.jpg")
 		if err != nil {
-			log.Fatal("Error opening image",err)
+			log.Fatal("Error opening image", err)
 		}
 		defer w.Close()
 		activeStrategy.SetWriter(w)
@@ -34,4 +34,3 @@ func TestPrint(t *testing.T) {
 		log.Fatal(err)
 	}
 }
-

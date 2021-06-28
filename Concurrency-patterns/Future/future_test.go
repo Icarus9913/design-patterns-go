@@ -81,7 +81,7 @@ func timeout(t *testing.T, wg *sync.WaitGroup) {
 
 func setContext(msg string) ExecuteStringFunc {
 	msg = fmt.Sprintf("%d Closure!\n", msg)
-	return func() (string, error){
+	return func() (string, error) {
 		return msg, nil
 	}
 }

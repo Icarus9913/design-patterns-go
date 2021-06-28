@@ -37,7 +37,7 @@ func TestCareTaker_Memento(t *testing.T) {
 }
 
 func TestOriginator_ExtractAndStoreState(t *testing.T) {
-	originator := originator{state:State{"Idle"}}
+	originator := originator{state: State{"Idle"}}
 	idleMemento := originator.NewMemento()
 	originator.ExtractAndStoreState(idleMemento)
 	if originator.state.Description != "Idle" {

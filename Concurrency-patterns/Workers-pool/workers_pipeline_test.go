@@ -13,9 +13,9 @@ func TestWorkers_pipeline(t *testing.T) {
 	workers := 3
 	for i := 0; i < workers; i++ {
 		var w WorkerLauncher = &PreffixSuffixWorker{
+			id:      i,
 			prefixS: fmt.Sprintf("WorkerID: %d -> ", i),
 			suffixS: " World",
-			id:      i,
 		}
 		dispatcher.LaunchWorker(w)
 	}
@@ -37,8 +37,10 @@ func Test_Dispatcher(t *testing.T) {
 	workers := 3
 	for i := 0; i < workers; i++ {
 		var w WorkerLauncher = &PreffixSuffixWorker{
-			prefixS: fmt.Sprintf("WorkerID: %d -> ", i), suffixS: " World",
-			id: i}
+			id:      i,
+			prefixS: fmt.Sprintf("WorkerID: %d -> ", i),
+			suffixS: " World",
+		}
 		dispatcher.LaunchWorker(w)
 	}
 	//Simulate Requests

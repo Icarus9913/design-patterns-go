@@ -12,12 +12,13 @@ type Interpreter interface {
 }
 
 type value int
+
 func (v *value) Read() int {
 	return int(*v)
 }
 
 type operationSum struct {
-	Left Interpreter
+	Left  Interpreter
 	Right Interpreter
 }
 
@@ -26,7 +27,7 @@ func (a *operationSum) Read() int {
 }
 
 type operationSubtract struct {
-	Left Interpreter
+	Left  Interpreter
 	Right Interpreter
 }
 
@@ -38,12 +39,12 @@ func operatorFactory(o string, left, right Interpreter) Interpreter {
 	switch o {
 	case SUM:
 		return &operationSum{
-			Left: left,
+			Left:  left,
 			Right: right,
 		}
 	case SUB:
 		return &operationSubtract{
-			Left: left,
+			Left:  left,
 			Right: right,
 		}
 	}

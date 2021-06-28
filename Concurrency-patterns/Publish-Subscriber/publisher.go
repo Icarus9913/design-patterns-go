@@ -33,7 +33,13 @@ func (p *publisher) Stop() {
 }
 
 func NewPublisher() Publisher {
-	return &publisher{}
+	return &publisher{
+		subscribers: nil,
+		addSubCh:    make(chan Subscriber),
+		removeSubCh: make(chan Subscriber),
+		in:          make(chan interface{}),
+		stop:        make(chan struct{}),
+	}
 }
 
 func (p *publisher) start() {
@@ -45,12 +51,10 @@ func (p *publisher) start() {
 			}
 		case sub := <-p.addSubCh:
 			p.subscribers = append(p.subscribers, sub)
-
 		case sub := <-p.removeSubCh:
 			for i, candidate := range p.subscribers {
 				if candidate == sub {
-					p.subscribers = append(p.subscribers[:i],
-						p.subscribers[i+1:]...)
+					p.subscribers = append(p.subscribers[:i], p.subscribers[i+1:]...)
 					candidate.Close()
 					break
 				}

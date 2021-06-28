@@ -61,9 +61,7 @@ func (w *PreffixSuffixWorker) prefix(in <-chan Request) {
 				msg.Handler(nil)
 				continue
 			}
-			msg.Handler(fmt.Sprintf("%s%s", w.prefixS,
-				uppercasedStringWithSuffix))
+			msg.Handler(fmt.Sprintf("%s%s", w.prefixS, uppercasedStringWithSuffix))
 		}
 	}()
 }
-

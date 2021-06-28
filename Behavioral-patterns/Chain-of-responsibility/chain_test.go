@@ -31,19 +31,19 @@ func TestCreateDefaultChain(t *testing.T) {
 		})
 
 	t.Run("2 loggers, second uses the closure implementation",
-		func(t	*testing.T) {
-		myWriter = myTestWriter{}
-		closureLogger := ClosureChain{
-			Closure: func(s string) {
-				fmt.Printf("My closure logger! Message: %s\n", s)
-				myWriter.receivedMessage = &s
-			},
-		}
-		writerLogger.NextChain = &closureLogger
-		chain.Next("Hello closure logger")
-		if *myWriter.receivedMessage != "Hello closure logger" {
-			t.Fatal("Expected message wasn't received in myWriter")
-		}
-	})
+		func(t *testing.T) {
+			myWriter = myTestWriter{}
+			closureLogger := ClosureChain{
+				Closure: func(s string) {
+					fmt.Printf("My closure logger! Message: %s\n", s)
+					myWriter.receivedMessage = &s
+				},
+			}
+			writerLogger.NextChain = &closureLogger
+			chain.Next("Hello closure logger")
+			if *myWriter.receivedMessage != "Hello closure logger" {
+				t.Fatal("Expected message wasn't received in myWriter")
+			}
+		})
 
 }
