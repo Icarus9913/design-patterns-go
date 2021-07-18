@@ -14,7 +14,7 @@ func Test_UserListProxy(t *testing.T) {
 		someDatabase = append(someDatabase, User{ID: n})
 	}
 
-	proxy := UserListProxy{
+	proxy := &UserListProxy{
 		SomeDatabase:  someDatabase,
 		StackCapacity: 2,
 		StackCache:    UserList{},

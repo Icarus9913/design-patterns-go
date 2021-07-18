@@ -25,7 +25,7 @@ func (t *UserList) FindUser(id int32) (User, error) {
 			return (*t)[i], nil
 		}
 	}
-	return User{}, fmt.Errorf("User %s could not be found\n", id)
+	return User{}, fmt.Errorf("User %d could not be found\n", id)
 }
 
 func (u *UserListProxy) FindUser(id int32) (User, error) {
