@@ -46,6 +46,7 @@ func TestSubject(t *testing.T) {
 			}
 		}
 	})
+
 	t.Run("Notify", func(t *testing.T) {
 		if len(publisher.ObserversList) == 0 {
 			t.Errorf("The list is empty. Nothing to test\n")

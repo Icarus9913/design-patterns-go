@@ -7,9 +7,11 @@ import (
 type UserFinder interface {
 	FindUser(id int32) (User, error)
 }
+
 type User struct {
 	ID int32
 }
+
 type UserList []User
 
 type UserListProxy struct {
@@ -52,6 +54,7 @@ func (u *UserListProxy) addUserToStack(user User) {
 		u.StackCache.addUser(user)
 	}
 }
+
 func (t *UserList) addUser(newUser User) {
 	*t = append(*t, newUser)
 }
